@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1 class="title">Etch-a-Sketch</h1>
+
+    <div id="container">
+        <div class="side-bar"><span class="color-selection">* Colors *</span>
+            <div id="color-side-bar"></div>
+            <span id="selected-color"></span>
+        </div>
+        <div id="grid-list"></div>
+        <div class="side-bar">
+            <span class="color-selection">* Tools *</span></div>
+    </div>
+
+    <button id="reset-button">Reset</button>
+    <input type="range" min="2" max="32" value="16" id="range-slider">
+
+
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='main.js'></script>
+</body>
+</html>
