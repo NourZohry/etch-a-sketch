@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Etch-a-Sketch</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <!-- Favicon made by Freepik (https://www.freepik.com) from Flaticon (https://www.flaticon.com/) -->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
+
 <body>
-    <h1 class="title">Etch-a-Sketch</h1>
+    <span class="title">
+    <span class="title-text-decor">✧･ﾟ: *✧･ﾟ:* </span>
+   <h1 class="title-text">Etch-a-Sketch  </span></h1>
+   <span class="title-text-decor">*:･ﾟ✧*:･ﾟ✧</span>
+</span>
 
     <div id="container">
-        <div class="side-bar"><span class="color-selection">* Colors *</span>
+        <div class="side-bar">
+            <span class="color-selection">* Colors *</span>
             <div id="color-side-bar"></div>
-            <span id="selected-color"></span>
+            <input type="color" id="selected-color">
         </div>
         <div id="grid-list"></div>
+
         <div class="side-bar">
-            <span class="color-selection">* Tools *</span></div>
+            <span class="color-selection">* Tools *</span>
+            <div class="tools-side-bar">
+
+                <span class="flex">
+                    <button id="pen" class="tool-button">Pen</button>
+                    <button id="eraser" class="tool-button">Eraser</button>
+                </span>
+                <button id="fill" class="tool-button">Change Canvas Color</button>
+                <button id="toggle-grid" class="tool-button">Toggle Grid</button>
+
+            </div>
+            <button id="reset-button">Reset</button>
+        </div>
+
+
+
+    </div>
+    <div class="range-slider-container">
+        <p class="range-slider-text">Canvas Size</p>
+        <input type="range" min="2" max="64" value="32" id="range-slider">
+        <p class="range-slider-text" id="range-slider-size-text"></p>
     </div>
 
-    <button id="reset-button">Reset</button>
-    <input type="range" min="2" max="32" value="16" id="range-slider">
+    </div>
+
 
 
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <script src='main.js'></script>
 </body>
+
 </html>

@@ -1,10 +1,26 @@
 body {
     font-family: 'Indie Flower', cursive;
+    background: -webkit-linear-gradient(left, #7577FA 20px, transparent 1%) center, -webkit-linear-gradient(#7577FA 20px, transparent 1%) center, #9192FB;
+    background: linear-gradient(90deg, #eee 20px, transparent 1%) center, linear-gradient(#eee 20px, transparent 1%) center, pink;
+    background-size: 22px 22px;
+} /* Background: Copyright (c) 2017 by Edmundo Santos (http://codepen.io/edmundojr/pen/xOYJGw) */
+
+.title-text {
+    text-align: center;
+    font-size: 48px;
+    margin: 2%;
+}
+
+.title-text-decor {
+    text-align: center;
+    font-size: 36px;
+    color: #ffcad4; /* Light Pink */
 }
 
 .title {
-    text-align: center;
-    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #container {
@@ -17,22 +33,23 @@ body {
 .side-bar {
     width: 130px;
     height: 290px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: lightpink;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #ffcad4; /* Light Pink */
     padding: 10px;
     display: grid;
-
     grid-template-rows: 1fr 1fr 1fr;
-
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 15px 5px 5px;
+    filter: drop-shadow(0px 0px 1px #333);
 }
 
 .color-selection {
-    text-align: center;
     font-size: 28px;
     font-weight: bold;
     margin-top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #color-side-bar {
@@ -42,18 +59,47 @@ body {
     justify-items: center;
 }
 
+.tools-side-bar {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 200px;
+    justify-items: center;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    column-gap: 5%;
+}
+
+.tool-button {
+    height: 90%;
+    width: 100%;
+
+    background-color: #fd96b6;
+
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.tool-button:hover {
+    opacity: 0.8;
+}
+
 #selected-color {
     height: auto;
     width: auto;
     background-color: black;
-    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
 }
 
 .color {
     height: 30px;
     width: 30px;
-    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
     border-radius: 20%;
     filter: drop-shadow(0px 0px 2px #000);
 }
@@ -63,21 +109,40 @@ body {
 }
 
 #grid-list {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     display: grid;
-    border: solid black;
-    border-width: 0px 0px 1px 1px;
     /* display: flex;
     flex-wrap: wrap; */
+    border: solid black;
+    border-width: 0px 0px 1px 1px;
+}
+
+.grid-list-border {
+    border: 1px solid black !important;
 }
 
 .grid {
     background-color: white;
+}
+
+.grid-border {
     border: solid black;
     border-width: 1px 1px 0px 0px;
 }
 
+.range-slider-container {
+    display: flex;
+    justify-content: center;
+}
+
 #range-slider {
-    width: 400px;
+    width: 360px;
+    margin: 20px 0px 20px 0px;
+}
+
+.range-slider-text {
+    font-size: larger;
+    margin-left: 10px;
+    margin-right: 10px;
 }
