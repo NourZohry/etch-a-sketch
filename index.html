@@ -15,10 +15,10 @@
 
 <body>
     <span class="title">
-    <span class="title-text-decor">✧･ﾟ: *✧･ﾟ:* </span>
-   <h1 class="title-text">Etch-a-Sketch  </span></h1>
-   <span class="title-text-decor">*:･ﾟ✧*:･ﾟ✧</span>
-</span>
+        <span class="title-text-decor">✧･ﾟ: *✧･ﾟ:* </span>
+        <h1 class="title-text">Etch-a-Sketch</h1>
+        <span class="title-text-decor">*:･ﾟ✧*:･ﾟ✧</span>
+    </span>
 
     <div id="container">
         <div class="side-bar">
@@ -26,32 +26,29 @@
             <div id="color-side-bar"></div>
             <input type="color" id="selected-color">
         </div>
-        <div id="grid-list"></div>
+
+        <span class="grid-list-container">
+            <div id="grid-list"></div>
+        </span>
 
         <div class="side-bar">
             <span class="color-selection">* Tools *</span>
             <div class="tools-side-bar">
-
                 <span class="flex">
                     <button id="pen" class="tool-button">Pen</button>
                     <button id="eraser" class="tool-button">Eraser</button>
                 </span>
                 <button id="fill" class="tool-button">Change Canvas Color</button>
                 <button id="toggle-grid" class="tool-button">Toggle Grid</button>
-
             </div>
-            <button id="reset-button">Reset</button>
+            <button id="reset-button" class="tool-button">Reset</button>
         </div>
-
-
-
     </div>
+
     <div class="range-slider-container">
         <p class="range-slider-text">Canvas Size</p>
-        <input type="range" min="2" max="64" value="32" id="range-slider">
+        <input type="range" min="2" max="64" value="32" id="range-slider" autocomplete="off">
         <p class="range-slider-text" id="range-slider-size-text"></p>
-    </div>
-
     </div>
 
 

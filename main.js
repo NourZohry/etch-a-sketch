@@ -18,11 +18,6 @@ function createColorPalette() {
     "brown", "black", "gray"]
 
     colorList.forEach(addToColorPalette);
-    /*
-    document.querySelectorAll(".color").forEach(element => {
-        element.addEventListener("click", () => { changeDrawingColor(element.dataset.color); }) 
-    });
-    */
 }
 
 function addToColorPalette(color) {
@@ -49,13 +44,20 @@ function deleteGrid() {
 }
 
 function changeDrawingColor(newColor) {
-    if (drawingColor != "white")
-        previousDrawingColor = drawingColor; 
+    if (drawingColor != "white") {
+        previousDrawingColor = drawingColor;
+    }
+    if (newColor == "white") {
+        gridList.classList.add("grid-list-eraser");
+    }
+    else {
+        gridList.classList.remove("grid-list-eraser");
+    }
     drawingColor = newColor;
 }
 
 function changeGridColor(gridId) {
-    document.getElementById(`grid-${gridId}`).style.backgroundColor = (drawingColor == "white" ? previousDrawingColor : drawingColor);
+    document.getElementById(`grid-${gridId}`).style.backgroundColor = drawingColor;
 }
 
 function fillGrid(color) {
@@ -65,15 +67,12 @@ function fillGrid(color) {
 }
 
 function createGrid(size) {
-    let gridList = document.getElementById("grid-list");
     gridList.style.gridTemplateColumns = "repeat(" + size + ", 1fr)"
     let div;
-    gridList.classList.remove("grid-list-border");
-        
+
     for (let i=0; i < size**2; i++) {
         div = document.createElement("div");
         div.classList.add("grid");
-        div.classList.add("grid-border");
         div.id = "grid-" + i;
         div.addEventListener("mouseover", () => { changeGridColor(i) });
 
@@ -82,23 +81,25 @@ function createGrid(size) {
 
     rangeSliderSizeText = document.getElementById("range-slider-size-text");
     rangeSliderSizeText.textContent = size + " x " + size;
+
+    if (toggledGrid) toggleGrid(false);
 }
 
-function toggleGrid() {
+function toggleGrid(toggle) {
     document.querySelectorAll(".grid").forEach(element => {
         element.classList.toggle("grid-border");
     });
-    document.getElementById("grid-list").classList.toggle("grid-list-border");
-    toggledGrid = !toggleGrid;
+    if (toggle != false)
+        toggledGrid = !toggledGrid;
 }
 
 let drawingColor="black";
 let previousDrawingColor = drawingColor;
 let toggledGrid = false;
 
+let gridList = document.getElementById("grid-list");
 createGrid(32);
 createColorPalette();
-toggleGrid();
 
 let resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", resetColors);
@@ -110,11 +111,9 @@ let penButton = document.getElementById("pen");
 penButton.addEventListener("click", () => { changeDrawingColor(previousDrawingColor);})
 let fillButton = document.getElementById("fill");
 fillButton.addEventListener("click", () => { fillGrid(drawingColor);})
-// Eraser then fill causes unexpected result?
 let colorPickerButton = document.getElementById("selected-color");
 colorPickerButton.addEventListener("change", () => {changeDrawingColor(colorPickerButton.value);} )
-
-colorPickerButton.value = convert("black");
-
 let toggleGridButton = document.getElementById("toggle-grid");
 toggleGridButton.addEventListener("click", toggleGrid);
+
+colorPickerButton.value = convert("black");
